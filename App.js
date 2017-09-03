@@ -26,9 +26,9 @@ export default class App extends React.Component {
               fontWeight: "bold",
             },
           }}
-          outerContainerStyles={{ backgroundColor: "#3D6DCC" }}
+          outerContainerStyles={{ backgroundColor: "#3d6dcc" }}
         />
-        <ScrollView style={{ marginTop: 70, backgroundColor: "#DDD" }}>
+        <ScrollView style={{ marginTop: 70, backgroundColor: "#f3f3fd" }}>
           <ApolloProvider client={client}>
             <Status />
           </ApolloProvider>
