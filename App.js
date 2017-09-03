@@ -22,7 +22,7 @@ export default class App extends React.Component {
           centerComponent={{ text: 'HOME STATUS', style: { color: '#fff'} }} 
           outerContainerStyles={{ backgroundColor: '#3D6DCC' }}
         />
-        <ScrollView style={{ marginTop: 70 }}>
+        <ScrollView style={{ marginTop: 70, backgroundColor: '#DDD' }}>
           <ApolloProvider client={client}>
             <Status />
           </ApolloProvider>
