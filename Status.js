@@ -1,11 +1,11 @@
 import React from "react";
 import gql from "graphql-tag";
 import { Card } from "react-native-elements";
-import { Text, View } from "react-native";
+import { View, Text } from "react-native";
 import { graphql } from "react-apollo";
 import { AppLoading } from "expo";
 
-function Status({ data: { loading, thermostat, vacuum } }) {
+export const Status = ({ data: { loading, thermostat, vacuum } }) => {
   if (loading) {
     return <AppLoading />;
   }
@@ -22,7 +22,7 @@ function Status({ data: { loading, thermostat, vacuum } }) {
       </Card>
     </View>
   );
-}
+};
 
 export default graphql(gql`
   query Status {

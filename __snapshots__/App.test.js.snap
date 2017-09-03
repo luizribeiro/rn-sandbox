@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders loading spinner while loading 1`] = `<ExponentAppLoading />`;
+
+exports[`renders thermostat and vacuum status 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#e1e8ee",
+          "borderWidth": 1,
+          "margin": 15,
+          "marginBottom": 0,
+          "padding": 15,
+          "shadowColor": "rgba(0,0,0, .2)",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 1,
+        },
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+          undefined,
+        ]
+      }
+    >
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "color": "#43484d",
+                  "fontSize": 17.5,
+                  "fontWeight": "bold",
+                  "marginBottom": 15,
+                  "textAlign": "center",
+                },
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          Thermostat
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#e1e8ee",
+                "height": 1,
+              },
+              Array [
+                Object {
+                  "marginBottom": 15,
+                },
+                undefined,
+              ],
+            ]
+          }
+        />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        The thermostat is 
+        OFF
+        .
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        Current temperature is 
+        24
+        C.
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#e1e8ee",
+          "borderWidth": 1,
+          "margin": 15,
+          "marginBottom": 0,
+          "padding": 15,
+          "shadowColor": "rgba(0,0,0, .2)",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 1,
+        },
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+          undefined,
+        ]
+      }
+    >
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "color": "#43484d",
+                  "fontSize": 17.5,
+                  "fontWeight": "bold",
+                  "marginBottom": 15,
+                  "textAlign": "center",
+                },
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          Vacuum
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#e1e8ee",
+                "height": 1,
+              },
+              Array [
+                Object {
+                  "marginBottom": 15,
+                },
+                undefined,
+              ],
+            ]
+          }
+        />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        The vacuum is 
+        CHARGING
+        .
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        The vacuum's battery is at 
+        100
+        %.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
