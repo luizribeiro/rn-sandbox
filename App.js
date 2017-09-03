@@ -1,13 +1,24 @@
+import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import React from 'react';
+import { ApolloProvider } from 'react-apollo';
 import { StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Status from './Status';
+
+const client = new ApolloClient({
+  networkInterface: createNetworkInterface({
+    uri: 'http://192.168.1.5:8000/graphql/',
+    credentials: 'same-origin',
+  }),
+  shouldBatch: false,
+});
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Test</Text>
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        <ApolloProvider client={client}>
+          <Status />
+        </ApolloProvider>
       </View>
     );
   }
