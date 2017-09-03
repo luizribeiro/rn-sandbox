@@ -19,7 +19,13 @@ export default class App extends React.Component {
       <View style={{ flex: 1 }}>
         <Header
           statusBarProps={{ barStyle: "light-content" }}
-          centerComponent={{ text: "HOME STATUS", style: { color: "#fff" } }}
+          centerComponent={{
+            text: "HOME STATUS",
+            style: {
+              color: "#fff",
+              fontWeight: "bold",
+            },
+          }}
           outerContainerStyles={{ backgroundColor: "#3D6DCC" }}
         />
         <ScrollView style={{ marginTop: 70, backgroundColor: "#DDD" }}>
