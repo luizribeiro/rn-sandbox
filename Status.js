@@ -1,10 +1,10 @@
-import React from 'react';
-import gql from 'graphql-tag';
-import { Card } from 'react-native-elements';
-import { Text, View } from 'react-native';
-import { graphql } from 'react-apollo';
+import React from "react";
+import gql from "graphql-tag";
+import { Card } from "react-native-elements";
+import { Text, View } from "react-native";
+import { graphql } from "react-apollo";
 
-function Status({ data: {loading, thermostat, vacuum} }) {
+function Status({ data: { loading, thermostat, vacuum } }) {
   if (loading) {
     return <Text>Loading</Text>;
   }
