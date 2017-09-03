@@ -4,4 +4,4 @@ node_js:
 
 script:
   - yarn run flow
-  - node node_modules/jest/bin/jest.js
+  - yarn run jest
