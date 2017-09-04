@@ -7,7 +7,7 @@ import { ScrollView, View, Text } from "react-native";
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: "http://192.168.1.5:8000/graphql/",
+    uri: "http://sb.luiz.ninja/graphql/",
     credentials: "same-origin",
   }),
   shouldBatch: false,
