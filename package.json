@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "flow-bin": "0.49.1",
     "jest-cli": "^20.0.4",
     "jest-expo": "~20.0.0",
@@ -21,7 +22,20 @@
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "clearMocks": true,
+    "coverageDirectory": "./coverage/",
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/coverage/"
+    ],
+    "collectCoverageFrom": [
+      "**/*.js"
+    ]
   },
   "dependencies": {
     "apollo-client": "^1.9.2",

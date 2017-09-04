@@ -5,4 +5,4 @@ node_js:
 script:
   - yarn run prettier-check ./*.js
   - yarn run flow
-  - yarn run jest
+  - yarn run jest -- --coverage && cat ./coverage/lcov.info | yarn run coveralls
