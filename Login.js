@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-native-elements";
 import { AsyncStorage, StyleSheet, View, Text } from "react-native";
-import { SocialIcon } from "react-native-elements";
+import { Icon, SocialIcon } from "react-native-elements";
 
 import { FACEBOOK_APP_ID } from "./Config";
 
@@ -50,6 +50,7 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Icon name='home' size={192} color="#888" />
         <SocialIcon
           button
           onPress={this._handleLoginWithFacebookAsync}
@@ -67,7 +68,7 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: "#f3f3fd",
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
   },
   loginButton: {
