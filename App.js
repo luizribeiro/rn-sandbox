@@ -1,5 +1,5 @@
 import ApolloClient, { createNetworkInterface } from "apollo-client";
-import Expo from 'expo';
+import Expo from "expo";
 import Login from "./Login";
 import React from "react";
 import Status from "./Status";
@@ -22,16 +22,18 @@ export default class App extends React.Component {
     const networkInterface = createNetworkInterface({
       uri: "http://sb.luiz.ninja/graphql/",
     });
-    networkInterface.use([{
-      applyMiddleware(req, next) {
-        if (!req.options.headers) {
-          req.options.headers = {};
-        }
-        req.options.headers['authorization'] = `Token ${session.token}`;
-        req.options.headers['content-type'] = 'application/json';
-        next();
-      }
-    }]);
+    networkInterface.use([
+      {
+        applyMiddleware(req, next) {
+          if (!req.options.headers) {
+            req.options.headers = {};
+          }
+          req.options.headers["authorization"] = `Token ${session.token}`;
+          req.options.headers["content-type"] = "application/json";
+          next();
+        },
+      },
+    ]);
     return new ApolloClient({
       networkInterface: networkInterface,
       shouldBatch: false,
@@ -39,7 +41,7 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    const session = await Expo.SecureStore.getItemAsync('session');
+    const session = await Expo.SecureStore.getItemAsync("session");
     if (session) {
       const sessionObject = JSON.parse(session);
       this.setState({
@@ -55,44 +57,45 @@ export default class App extends React.Component {
   }
 
   _onLoginHandlerAsync = async (session: SessionInfo) => {
-    await Expo.SecureStore.setItemAsync('session', JSON.stringify(session));
+    await Expo.SecureStore.setItemAsync("session", JSON.stringify(session));
     this.setState({
       client: this._getApolloClient(session),
       hasSession: true,
     });
-  }
+  };
 
   render() {
     if (this.state.hasSession === null) {
       return <AppLoading />;
     }
 
-    const content = this.state.hasSession ? [
-      <Header
-        statusBarProps={{ barStyle: "light-content" }}
-        centerComponent={{
-          text: "HOME STATUS",
-          style: {
-            color: "#fff",
-            fontWeight: "bold",
-          },
-        }}
-        outerContainerStyles={{ backgroundColor: "#3d6dcc" }}
-        key="header"
-      />,
-      <ScrollView style={{ marginTop: 70, backgroundColor: "#f3f3fd" }} key="content">
-        <ApolloProvider client={this.state.client}>
-          <Status />
-        </ApolloProvider>
-      </ScrollView>
-    ] : (
+    const content = this.state.hasSession ? (
+      [
+        <Header
+          statusBarProps={{ barStyle: "light-content" }}
+          centerComponent={{
+            text: "HOME STATUS",
+            style: {
+              color: "#fff",
+              fontWeight: "bold",
+            },
+          }}
+          outerContainerStyles={{ backgroundColor: "#3d6dcc" }}
+          key="header"
+        />,
+        <ScrollView
+          style={{ marginTop: 70, backgroundColor: "#f3f3fd" }}
+          key="content"
+        >
+          <ApolloProvider client={this.state.client}>
+            <Status />
+          </ApolloProvider>
+        </ScrollView>,
+      ]
+    ) : (
       <Login onLogin={this._onLoginHandlerAsync} />
     );
 
-    return (
-      <View style={{ flex: 1 }}>
-        {content}
-      </View>
-    );
+    return <View style={{ flex: 1 }}>{content}</View>;
   }
 }
