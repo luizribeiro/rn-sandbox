@@ -3,7 +3,7 @@ import Expo from 'expo';
 import Login from "./Login";
 import React from "react";
 import Status from "./Status";
-import { Alert, AsyncStorage, ScrollView, View, Text } from "react-native";
+import { Alert, ScrollView, View, Text } from "react-native";
 import { ApolloProvider } from "react-apollo";
 import { AppLoading } from "expo";
 import { Header } from "react-native-elements";
@@ -39,8 +39,8 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    const session = await AsyncStorage.getItem('@app:session');
-    if (session !== null) {
+    const session = await Expo.SecureStore.getItemAsync('session');
+    if (session) {
       const sessionObject = JSON.parse(session);
       this.setState({
         client: this._getApolloClient(sessionObject),
@@ -55,7 +55,7 @@ export default class App extends React.Component {
   }
 
   _onLoginHandlerAsync = async (session: SessionInfo) => {
-    await AsyncStorage.setItem('@app:session', JSON.stringify(session));
+    await Expo.SecureStore.setItemAsync('session', JSON.stringify(session));
     this.setState({
       client: this._getApolloClient(session),
       hasSession: true,

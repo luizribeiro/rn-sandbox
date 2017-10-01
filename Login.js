@@ -1,7 +1,8 @@
+import Expo from 'expo';
 import React from "react";
 import { Card } from "react-native-elements";
-import { AsyncStorage, StyleSheet, View, Text } from "react-native";
 import { Icon, SocialIcon } from "react-native-elements";
+import { StyleSheet, View, Text } from "react-native";
 
 import { FACEBOOK_APP_ID } from "./Config";
 
