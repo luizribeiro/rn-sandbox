@@ -11,35 +11,22 @@ import { AppLoading } from "expo";
 
 import type { OperationComponent } from "react-apollo";
 
-const STATUS_QUERY = gql`
-  query Status {
-    thermostat {
-      mode
-      currentTemperature
-      targetTemperature
-    }
-    vacuum {
-      state
-      battery
-    }
-  }
-`;
-
-type Response = {
-  thermostat: {
-    mode: string,
-    currentTemperature: number,
-    targetTemperature: number,
-  },
-  vacuum: {
-    state: string,
-    battery: number,
+type Props = {
+  data: {
+    loading: boolean,
+    thermostat: {
+      mode: string,
+      currentTemperature: number,
+      targetTemperature: number,
+    },
+    vacuum: {
+      state: string,
+      battery: number,
+    },
   },
 };
 
-const withStatus: OperationComponent<Response> = graphql(STATUS_QUERY);
-
-export default withStatus(({ data: { loading, thermostat, vacuum } }) => {
+export const Status = ({ data: { loading, thermostat, vacuum } }: Props) => {
   if (loading) {
     return <AppLoading />;
   }
@@ -56,4 +43,18 @@ export default withStatus(({ data: { loading, thermostat, vacuum } }) => {
       </Card>
     </View>
   );
-});
+};
+
+export default graphql(gql`
+  query Status {
+    thermostat {
+      mode
+      currentTemperature
+      targetTemperature
+    }
+    vacuum {
+      state
+      battery
+    }
+  }
+`)(Status);
