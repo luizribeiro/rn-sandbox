@@ -23,6 +23,7 @@ type Result = {
   vacuum: {
     state: string,
     battery: number,
+    cleanedArea: number,
   },
 };
 
@@ -32,6 +33,8 @@ export const Status = ({
   if (loading) {
     return <AppLoading />;
   }
+
+  const isCleaning: boolean = vacuum.state === "CLEANING";
 
   return (
     <View>
@@ -61,8 +64,6 @@ export const Status = ({
             <View
               style={{
                 position: "absolute",
-                width: 100,
-                height: 100,
                 alignItems: "center",
                 justifyContent: "center",
               }}
@@ -80,13 +81,27 @@ export const Status = ({
               />
             </View>
           </View>
-          <View>
+          <View style={{ alignItems: "center" }}>
             <Text
-              style={{ fontWeight: "bold", fontSize: 22, color: "#376484" }}
+              style={{
+                fontWeight: "bold",
+                fontSize: 22,
+                color: "#376484",
+                marginBottom: isCleaning ? 2 : 0,
+              }}
             >
               {vacuum.state.charAt(0).toUpperCase() +
                 vacuum.state.slice(1).toLowerCase()}
             </Text>
+            {isCleaning ? (
+              <Progress.Bar
+                progress={vacuum.cleanedArea / 70.0}
+                borderWidth={1}
+                height={3}
+                color="#A9C2D4"
+                width={92}
+              />
+            ) : null}
           </View>
         </View>
         <View style={{ flex: 1, flexDirection: "row" }}>
@@ -142,6 +157,7 @@ export default graphql(gql`
     vacuum {
       state
       battery
+      cleanedArea
     }
   }
 `)(Status);
