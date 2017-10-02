@@ -12,8 +12,7 @@ import { graphql } from "react-apollo";
 
 import type { OperationComponent, OptionProps } from "react-apollo";
 
-type Props = {
-};
+type Props = {};
 
 type Result = {
   thermostat: {
@@ -27,9 +26,9 @@ type Result = {
   },
 };
 
-export const Status = (
-  { data: { loading, thermostat, vacuum } }: OptionProps<Props, Result>,
-) => {
+export const Status = ({
+  data: { loading, thermostat, vacuum },
+}: OptionProps<Props, Result>) => {
   if (loading) {
     return <AppLoading />;
   }
