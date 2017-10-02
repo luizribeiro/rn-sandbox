@@ -10,24 +10,26 @@ import { Button, Card, Icon } from "react-native-elements";
 import { View, Text } from "react-native";
 import { graphql } from "react-apollo";
 
-import type { OperationComponent } from "react-apollo";
+import type { OperationComponent, OptionProps } from "react-apollo";
 
 type Props = {
-  data: {
-    loading: boolean,
-    thermostat: {
-      mode: string,
-      currentTemperature: number,
-      targetTemperature: number,
-    },
-    vacuum: {
-      state: string,
-      battery: number,
-    },
+};
+
+type Result = {
+  thermostat: {
+    mode: string,
+    currentTemperature: number,
+    targetTemperature: number,
+  },
+  vacuum: {
+    state: string,
+    battery: number,
   },
 };
 
-export const Status = ({ data: { loading, thermostat, vacuum } }: Props) => {
+export const Status = (
+  { data: { loading, thermostat, vacuum } }: OptionProps<Props, Result>,
+) => {
   if (loading) {
     return <AppLoading />;
   }
