@@ -44,6 +44,7 @@
     "react": "16.0.0-alpha.12",
     "react-apollo": "^1.4.16",
     "react-native": "https://github.com/expo/react-native/archive/sdk-21.0.2.tar.gz",
-    "react-native-elements": "^0.17.0"
+    "react-native-elements": "^0.17.0",
+    "react-native-progress": "^3.4.0"
   }
 }
