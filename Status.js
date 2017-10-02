@@ -2,7 +2,6 @@
  * @flow
  */
 
-import * as Progress from "react-native-progress";
 import React from "react";
 import gql from "graphql-tag";
 import { AppLoading } from "expo";
@@ -11,6 +10,7 @@ import { View, Text } from "react-native";
 import { graphql } from "react-apollo";
 
 import ProgressCircle from "./ProgressCircle";
+import ProgressBar from "./ProgressBar";
 
 import type { OperationComponent, OptionProps } from "react-apollo";
 
@@ -69,13 +69,7 @@ export const Status = ({
                 vacuum.state.slice(1).toLowerCase()}
             </Text>
             {isCleaning ? (
-              <Progress.Bar
-                progress={vacuum.cleanedArea / 70.0}
-                borderWidth={1}
-                height={3}
-                color="#A9C2D4"
-                width={92}
-              />
+              <ProgressBar value={vacuum.cleanedArea / 70.0} />
             ) : null}
           </View>
         </View>
