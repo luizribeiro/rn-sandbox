@@ -113,11 +113,11 @@ export default class App extends React.Component {
               fontWeight: "bold",
             },
           }}
-          outerContainerStyles={{ backgroundColor: "#3d6dcc" }}
+          outerContainerStyles={{ backgroundColor: "#05668D" }}
           key="header"
         />,
         <ScrollView
-          style={{ marginTop: 70, backgroundColor: "#f3f3fd" }}
+          style={{ marginTop: 70, backgroundColor: "#EBF2FA" }}
           key="content"
         >
           {view}

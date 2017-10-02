@@ -68,7 +68,7 @@ export default class Login extends React.Component {
 var styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    backgroundColor: "#f3f3fd",
+    backgroundColor: "#EBF2FA",
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
