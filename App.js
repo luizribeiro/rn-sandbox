@@ -4,15 +4,17 @@
 
 import ApolloClient, { createNetworkInterface } from "apollo-client";
 import Expo from "expo";
-import Login from "./Login";
 import React from "react";
-import Status from "./Status";
 import { Alert, ScrollView, View, Text } from "react-native";
 import { ApolloProvider } from "react-apollo";
 import { AppLoading } from "expo";
 import { Header } from "react-native-elements";
-import type { SessionInfo } from "./Login";
+
+import Login from "./Login";
+import Status from "./Status";
+
 import type { MiddlewareInterface, MiddlewareRequest } from "apollo-client";
+import type { SessionInfo } from "./Login";
 
 type Props = {};
 

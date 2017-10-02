@@ -1,7 +1,7 @@
 import React from "react";
-import { Status } from "./Status";
-
 import renderer from "react-test-renderer";
+
+import { Status } from "./Status";
 
 it("renders loading spinner while loading", () => {
   const rendered = renderer

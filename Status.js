@@ -4,10 +4,10 @@
 
 import React from "react";
 import gql from "graphql-tag";
+import { AppLoading } from "expo";
 import { Card } from "react-native-elements";
 import { View, Text } from "react-native";
 import { graphql } from "react-apollo";
-import { AppLoading } from "expo";
 
 import type { OperationComponent } from "react-apollo";
 
