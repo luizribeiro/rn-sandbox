@@ -1,3 +1,7 @@
+/**
+ * @flow
+ */
+
 import React from "react";
 import gql from "graphql-tag";
 import { Card } from "react-native-elements";
@@ -5,7 +9,37 @@ import { View, Text } from "react-native";
 import { graphql } from "react-apollo";
 import { AppLoading } from "expo";
 
-export const Status = ({ data: { loading, thermostat, vacuum } }) => {
+import type { OperationComponent } from "react-apollo";
+
+const STATUS_QUERY = gql`
+  query Status {
+    thermostat {
+      mode
+      currentTemperature
+      targetTemperature
+    }
+    vacuum {
+      state
+      battery
+    }
+  }
+`;
+
+type Response = {
+  thermostat: {
+    mode: string,
+    currentTemperature: number,
+    targetTemperature: number,
+  },
+  vacuum: {
+    state: string,
+    battery: number,
+  },
+};
+
+const withStatus: OperationComponent<Response> = graphql(STATUS_QUERY);
+
+export default withStatus(({ data: { loading, thermostat, vacuum } }) => {
   if (loading) {
     return <AppLoading />;
   }
@@ -22,18 +56,4 @@ export const Status = ({ data: { loading, thermostat, vacuum } }) => {
       </Card>
     </View>
   );
-};
-
-export default graphql(gql`
-  query Status {
-    thermostat {
-      mode
-      currentTemperature
-      targetTemperature
-    }
-    vacuum {
-      state
-      battery
-    }
-  }
-`)(Status);
+});

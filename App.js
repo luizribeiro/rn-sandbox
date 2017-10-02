@@ -1,3 +1,7 @@
+/**
+ * @flow
+ */
+
 import ApolloClient, { createNetworkInterface } from "apollo-client";
 import Expo from "expo";
 import Login from "./Login";
@@ -7,9 +11,21 @@ import { Alert, ScrollView, View, Text } from "react-native";
 import { ApolloProvider } from "react-apollo";
 import { AppLoading } from "expo";
 import { Header } from "react-native-elements";
+import type { SessionInfo } from "./Login";
+import type { MiddlewareInterface, MiddlewareRequest } from "apollo-client";
+
+type Props = {};
+
+type State = {
+  client: ?ApolloClient,
+  hasSession: ?boolean,
+};
 
 export default class App extends React.Component {
-  constructor(props) {
+  props: Props;
+  state: State;
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -18,29 +34,37 @@ export default class App extends React.Component {
     };
   }
 
-  _getApolloClient(session) {
+  _getApolloClient(session: SessionInfo): ApolloClient {
     const networkInterface = createNetworkInterface({
       uri: "http://sb.luiz.ninja/graphql/",
     });
-    networkInterface.use([
+    const middleware: Array<MiddlewareInterface> = [
       {
-        applyMiddleware(req, next) {
+        applyMiddleware(req: MiddlewareRequest, next: Function): void {
+          if (!req.options) {
+            req.options = {};
+          }
           if (!req.options.headers) {
             req.options.headers = {};
           }
-          req.options.headers["authorization"] = `Token ${session.token}`;
+          req.options.headers.authorization = `Token ${session.token}`;
           req.options.headers["content-type"] = "application/json";
           next();
         },
       },
-    ]);
+    ];
+    networkInterface.use(middleware);
     return new ApolloClient({
       networkInterface: networkInterface,
       shouldBatch: false,
     });
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this._componentDidMountAsync();
+  }
+
+  async _componentDidMountAsync() {
     const session = await Expo.SecureStore.getItemAsync("session");
     if (session) {
       const sessionObject = JSON.parse(session);
@@ -69,8 +93,15 @@ export default class App extends React.Component {
       return <AppLoading />;
     }
 
-    const content = this.state.hasSession ? (
-      [
+    let content;
+    if (this.state.hasSession && this.state.client) {
+      const view = (
+        // $FlowFixMe
+        <ApolloProvider client={this.state.client}>
+          <Status />
+        </ApolloProvider>
+      );
+      content = [
         <Header
           statusBarProps={{ barStyle: "light-content" }}
           centerComponent={{
@@ -87,14 +118,18 @@ export default class App extends React.Component {
           style={{ marginTop: 70, backgroundColor: "#f3f3fd" }}
           key="content"
         >
-          <ApolloProvider client={this.state.client}>
-            <Status />
-          </ApolloProvider>
+          {view}
         </ScrollView>,
-      ]
-    ) : (
-      <Login onLogin={this._onLoginHandlerAsync} />
-    );
+      ];
+    } else {
+      content = (
+        <Login
+          onLogin={(session: SessionInfo) => {
+            this._onLoginHandlerAsync(session);
+          }}
+        />
+      );
+    }
 
     return <View style={{ flex: 1 }}>{content}</View>;
   }

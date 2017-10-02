@@ -1,3 +1,7 @@
+/**
+ * @flow
+ */
+
 import Expo from "expo";
 import React from "react";
 import { Card } from "react-native-elements";
