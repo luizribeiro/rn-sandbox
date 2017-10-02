@@ -10,6 +10,8 @@ import { Button, Card, Icon } from "react-native-elements";
 import { View, Text } from "react-native";
 import { graphql } from "react-apollo";
 
+import ProgressCircle from "./ProgressCircle";
+
 import type { OperationComponent, OptionProps } from "react-apollo";
 
 type Props = {};
@@ -48,39 +50,12 @@ export const Status = ({
             marginBottom: 15,
           }}
         >
-          <View
-            style={{
-              alignItems: "center",
-              justifyContent: "center",
-              marginRight: 10,
-            }}
-          >
-            <Progress.Circle
-              size={64}
-              progress={vacuum.battery / 100.0}
-              thickness={5}
-              color="#427AA1"
-            />
-            <View
-              style={{
-                position: "absolute",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Icon
-                name={
-                  vacuum.state === "CHARGING" ? (
-                    "battery-charging-full"
-                  ) : (
-                    "battery-full"
-                  )
-                }
-                color="#376484"
-                size={32}
-              />
-            </View>
-          </View>
+          <ProgressCircle
+            value={vacuum.battery / 100.0}
+            content={
+              <Icon name={"battery-charging-full"} color="#376484" size={32} />
+            }
+          />
           <View style={{ alignItems: "center" }}>
             <Text
               style={{
