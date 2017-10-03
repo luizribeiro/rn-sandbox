@@ -10,7 +10,7 @@ type Props = {
   value: number,
 };
 
-export default class ProgressCircle extends React.PureComponent {
+export default class ProgressBar extends React.PureComponent {
   props: Props;
 
   render() {
