@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders for value 0 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "marginRight": 10,
+    }
+  }
+>
+  <Svg
+    height={64}
+    width={64}
+  >
+    <Circle
+      cx={32}
+      cy={32}
+      fillOpacity={0}
+      r={31}
+      stroke="#427AA1"
+      strokeWidth={1}
+    />
+    <Path
+      d="
+                  M 32 3
+                  A 29 29 0 0 0
+                    32 3"
+      fillOpacity={0}
+      stroke="#427AA1"
+      strokeWidth={6}
+    />
+  </Svg>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`renders for value 0.5 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "marginRight": 10,
+    }
+  }
+>
+  <Svg
+    height={64}
+    width={64}
+  >
+    <Circle
+      cx={32}
+      cy={32}
+      fillOpacity={0}
+      r={31}
+      stroke="#427AA1"
+      strokeWidth={1}
+    />
+    <Path
+      d="
+                  M 32 3
+                  A 29 29 0 0 0
+                    31.999999999999993 61"
+      fillOpacity={0}
+      stroke="#427AA1"
+      strokeWidth={6}
+    />
+  </Svg>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`renders for value 0.25 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "marginRight": 10,
+    }
+  }
+>
+  <Svg
+    height={64}
+    width={64}
+  >
+    <Circle
+      cx={32}
+      cy={32}
+      fillOpacity={0}
+      r={31}
+      stroke="#427AA1"
+      strokeWidth={1}
+    />
+    <Path
+      d="
+                  M 32 3
+                  A 29 29 0 0 0
+                    3 31.999999999999996"
+      fillOpacity={0}
+      stroke="#427AA1"
+      strokeWidth={6}
+    />
+  </Svg>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`renders for value 0.75 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "marginRight": 10,
+    }
+  }
+>
+  <Svg
+    height={64}
+    width={64}
+  >
+    <Circle
+      cx={32}
+      cy={32}
+      fillOpacity={0}
+      r={31}
+      stroke="#427AA1"
+      strokeWidth={1}
+    />
+    <Path
+      d="
+                  M 32 3
+                  A 29 29 0 1 0
+                    61 32.00000000000001"
+      fillOpacity={0}
+      stroke="#427AA1"
+      strokeWidth={6}
+    />
+  </Svg>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`renders for value 0.99 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "marginRight": 10,
+    }
+  }
+>
+  <Svg
+    height={64}
+    width={64}
+  >
+    <Circle
+      cx={32}
+      cy={32}
+      fillOpacity={0}
+      r={31}
+      stroke="#427AA1"
+      strokeWidth={1}
+    />
+    <Path
+      d="
+                  M 32 3
+                  A 29 29 0 1 0
+                    33.820925066350085 3.0572248755801255"
+      fillOpacity={0}
+      stroke="#427AA1"
+      strokeWidth={6}
+    />
+  </Svg>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`renders for value 1 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "marginRight": 10,
+    }
+  }
+>
+  <Svg
+    height={64}
+    width={64}
+  >
+    <Circle
+      cx={32}
+      cy={32}
+      fillOpacity={0}
+      r={31}
+      stroke="#427AA1"
+      strokeWidth={1}
+    />
+    <Circle
+      cx={32}
+      cy={32}
+      fillOpacity={0}
+      r={29}
+      stroke="#427AA1"
+      strokeWidth={6}
+    />
+  </Svg>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+      }
+    }
+  />
+</View>
+`;
