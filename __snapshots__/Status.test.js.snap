@@ -71,7 +71,7 @@ exports[`renders thermostat and vacuum status 1`] = `
             ]
           }
         >
-          Thermostat
+          Vacuum
         </Text>
         <View
           style={
@@ -90,26 +90,446 @@ exports[`renders thermostat and vacuum status 1`] = `
           }
         />
       </View>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginBottom": 15,
+          }
+        }
       >
-        The thermostat is 
-        OFF
-        .
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "marginRight": 10,
+            }
+          }
+        >
+          <Svg
+            height={64}
+            width={64}
+          >
+            <Circle
+              cx={32}
+              cy={32}
+              fillOpacity={0}
+              r={31}
+              stroke="#427AA1"
+              strokeWidth={1}
+            />
+            <Circle
+              cx={32}
+              cy={32}
+              fillOpacity={0}
+              r={29}
+              stroke="#427AA1"
+              strokeWidth={6}
+            />
+          </Svg>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "position": "absolute",
+              }
+            }
+          >
+            <View
+              onPress={undefined}
+              style={
+                Array [
+                  false,
+                  false,
+                  false,
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                ]
+              }
+              underlayColor="white"
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={false}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#376484",
+                      "fontSize": 32,
+                    },
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      undefined,
+                    ],
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#376484",
+                "fontSize": 22,
+                "fontWeight": "bold",
+                "marginBottom": 0,
+              }
+            }
+          >
+            Charging
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          }
+        }
       >
-        Current temperature is 
-        24
-        C.
-      </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "marginLeft": 15,
+                "marginRight": 15,
+              },
+              undefined,
+              Object {
+                "flex": 1,
+                "marginLeft": 0,
+                "marginRight": 0,
+              },
+              Object {
+                "borderRadius": 5,
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+              ]
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#9E9E9E",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "padding": 19,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  Object {
+                    "backgroundColor": "#679436",
+                  },
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "padding": 12,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  Object {
+                    "padding": 8,
+                  },
+                  undefined,
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={false}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "white",
+                      "fontSize": 24,
+                    },
+                    Array [
+                      Object {
+                        "marginRight": 10,
+                      },
+                      undefined,
+                    ],
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                  ]
+                }
+              >
+                
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    Array [
+                      Object {
+                        "color": "white",
+                        "fontSize": 20,
+                      },
+                      undefined,
+                      Object {
+                        "fontSize": 17.5,
+                      },
+                      undefined,
+                      Object {
+                        "fontWeight": "bold",
+                      },
+                      undefined,
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                Clean
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "width": 12,
+            }
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "marginLeft": 15,
+                "marginRight": 15,
+              },
+              undefined,
+              Object {
+                "flex": 1,
+                "marginLeft": 0,
+                "marginRight": 0,
+              },
+              Object {
+                "borderRadius": 5,
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+              ]
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#9E9E9E",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "padding": 19,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  Object {
+                    "backgroundColor": "#427AA1",
+                  },
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "padding": 12,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  Object {
+                    "padding": 8,
+                  },
+                  Object {
+                    "backgroundColor": "#dadee0",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={false}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "white",
+                      "fontSize": 24,
+                    },
+                    Array [
+                      Object {
+                        "marginRight": 10,
+                      },
+                      undefined,
+                    ],
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                  ]
+                }
+              >
+                
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {},
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    Array [
+                      Object {
+                        "color": "white",
+                        "fontSize": 20,
+                      },
+                      undefined,
+                      Object {
+                        "fontSize": 17.5,
+                      },
+                      undefined,
+                      Object {
+                        "fontWeight": "bold",
+                      },
+                      undefined,
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                Dock
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
     </View>
   </View>
   <View
@@ -179,7 +599,7 @@ exports[`renders thermostat and vacuum status 1`] = `
             ]
           }
         >
-          Vacuum
+          Thermostat
         </Text>
         <View
           style={
@@ -204,8 +624,8 @@ exports[`renders thermostat and vacuum status 1`] = `
         disabled={false}
         ellipsizeMode="tail"
       >
-        The vacuum is 
-        CHARGING
+        The thermostat is 
+        OFF
         .
       </Text>
       <Text
@@ -214,9 +634,9 @@ exports[`renders thermostat and vacuum status 1`] = `
         disabled={false}
         ellipsizeMode="tail"
       >
-        The vacuum's battery is at 
-        100
-        %.
+        Current temperature is 
+        24
+        C.
       </Text>
     </View>
   </View>

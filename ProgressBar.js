@@ -3,8 +3,8 @@
  */
 
 import React from "react";
+import Svg from "react-native-svg";
 import { View } from "react-native";
-import { Svg } from "expo";
 
 type Props = {
   value: number,
