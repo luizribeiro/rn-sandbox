@@ -19,18 +19,21 @@ class VacuumCard extends React.Component {
   props: ChildProps<VacuumState, {}>;
 
   _onUpdateVacuum(newState: string): void {
-    this.props.mutate({
-      variables: { newState },
-      update: (store, { data: { submitComment } }) => {
-        const data = store.readQuery({ query: StatusQuery });
-        data.vacuum.state = newState;
-        store.writeQuery({ query: StatusQuery, data });
-      },
-    }).then(({ data }) => {
-      console.log('got data', data);
-    }).catch((error) => {
-      console.log('there was an error sending the query', error);
-    });
+    this.props
+      .mutate({
+        variables: { newState },
+        update: (store, { data: { submitComment } }) => {
+          const data = store.readQuery({ query: StatusQuery });
+          data.vacuum.state = newState;
+          store.writeQuery({ query: StatusQuery, data });
+        },
+      })
+      .then(({ data }) => {
+        console.log("got data", data);
+      })
+      .catch(error => {
+        console.log("there was an error sending the query", error);
+      });
   }
 
   render() {
@@ -114,7 +117,7 @@ class VacuumCard extends React.Component {
 }
 
 export default graphql(gql`
-  mutation UpdateVacuum ($newState: VacuumState!) {
+  mutation UpdateVacuum($newState: VacuumState!) {
     updateVacuum(state: $newState) {
       ok
     }
