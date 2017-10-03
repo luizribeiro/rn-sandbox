@@ -32,9 +32,23 @@ type Result = {
   vacuum: VacuumState,
 };
 
-export const Status = ({
-  data: { loading, thermostat, vacuum },
-}: OptionProps<Props, Result>) => {
+export const StatusQuery = gql`
+  query Status {
+    thermostat {
+      mode
+      currentTemperature
+      targetTemperature
+    }
+    vacuum {
+      state
+      battery
+      cleanedArea
+    }
+  }
+`;
+
+export const Status = (props: OptionProps<Props, Result>) => {
+  const { loading, thermostat, vacuum } = props.data;
   if (loading) {
     return <AppLoading />;
   }
@@ -50,17 +64,4 @@ export const Status = ({
   );
 };
 
-export default graphql(gql`
-  query Status {
-    thermostat {
-      mode
-      currentTemperature
-      targetTemperature
-    }
-    vacuum {
-      state
-      battery
-      cleanedArea
-    }
-  }
-`)(Status);
+export default graphql(StatusQuery)(Status);

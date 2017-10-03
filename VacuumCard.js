@@ -8,8 +8,9 @@ import { Button, Card, Icon } from "react-native-elements";
 import { View, Text } from "react-native";
 import { graphql } from "react-apollo";
 
-import ProgressCircle from "./ProgressCircle";
 import ProgressBar from "./ProgressBar";
+import ProgressCircle from "./ProgressCircle";
+import { StatusQuery } from "./Status";
 
 import type { ChildProps } from "react-apollo";
 import type { VacuumState } from "./Status";
@@ -18,12 +19,18 @@ class VacuumCard extends React.Component {
   props: ChildProps<VacuumState, {}>;
 
   _onUpdateVacuum(newState: string): void {
-    this.props.mutate({ variables: { newState } })
-      .then(({ data }) => {
-        console.log('got data', data);
-      }).catch((error) => {
-        console.log('there was an error sending the query', error);
-      });
+    this.props.mutate({
+      variables: { newState },
+      update: (store, { data: { submitComment } }) => {
+        const data = store.readQuery({ query: StatusQuery });
+        data.vacuum.state = newState;
+        store.writeQuery({ query: StatusQuery, data });
+      },
+    }).then(({ data }) => {
+      console.log('got data', data);
+    }).catch((error) => {
+      console.log('there was an error sending the query', error);
+    });
   }
 
   render() {
