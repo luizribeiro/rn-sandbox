@@ -64,4 +64,8 @@ export const Status = (props: OptionProps<Props, Result>) => {
   );
 };
 
-export default graphql(StatusQuery)(Status);
+export default graphql(StatusQuery, {
+  options: props => {
+    return { pollInterval: 30000 };
+  },
+})(Status);
