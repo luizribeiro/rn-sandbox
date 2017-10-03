@@ -3,16 +3,28 @@
  */
 
 import React from "react";
+import gql from "graphql-tag";
 import { Button, Card, Icon } from "react-native-elements";
 import { View, Text } from "react-native";
+import { graphql } from "react-apollo";
 
 import ProgressCircle from "./ProgressCircle";
 import ProgressBar from "./ProgressBar";
 
+import type { ChildProps } from "react-apollo";
 import type { VacuumState } from "./Status";
 
-export default class VacuumCard extends React.Component {
-  props: VacuumState;
+class VacuumCard extends React.Component {
+  props: ChildProps<VacuumState, {}>;
+
+  _onUpdateVacuum(newState: string): void {
+    this.props.mutate({ variables: { newState } })
+      .then(({ data }) => {
+        console.log('got data', data);
+      }).catch((error) => {
+        console.log('there was an error sending the query', error);
+      });
+  }
 
   render() {
     const vacuum = this.props;
@@ -62,6 +74,7 @@ export default class VacuumCard extends React.Component {
               buttonStyle={{ padding: 8 }}
               borderRadius={5}
               textStyle={{ fontWeight: "bold" }}
+              onPress={() => this._onUpdateVacuum("PAUSED")}
             />
           ) : (
             <Button
@@ -72,6 +85,7 @@ export default class VacuumCard extends React.Component {
               backgroundColor="#679436"
               borderRadius={5}
               textStyle={{ fontWeight: "bold" }}
+              onPress={() => this._onUpdateVacuum("CLEANING")}
             />
           )}
           <View style={{ width: 12 }} />
@@ -84,9 +98,18 @@ export default class VacuumCard extends React.Component {
             buttonStyle={{ padding: 8 }}
             borderRadius={5}
             textStyle={{ fontWeight: "bold" }}
+            onPress={() => this._onUpdateVacuum("CHARGING")}
           />
         </View>
       </Card>
     );
   }
 }
+
+export default graphql(gql`
+  mutation UpdateVacuum ($newState: VacuumState!) {
+    updateVacuum(state: $newState) {
+      ok
+    }
+  }
+`)(VacuumCard);
