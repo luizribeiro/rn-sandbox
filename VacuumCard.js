@@ -22,7 +22,7 @@ class VacuumCard extends React.Component {
     this.props
       .mutate({
         variables: { newState },
-        update: (store, { data: { submitComment } }) => {
+        update: (store, { data: { updateVacuum } }) => {
           const data = store.readQuery({ query: StatusQuery });
           data.vacuum.state = newState;
           store.writeQuery({ query: StatusQuery, data });
