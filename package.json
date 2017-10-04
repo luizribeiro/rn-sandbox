@@ -6,7 +6,7 @@
     "coveralls": "^2.13.1",
     "flow-bin": "0.49.1",
     "jest-cli": "^20.0.4",
-    "jest-expo": "~21.0.0",
+    "jest-expo": "git://github.com/luizribeiro/jest-expo.git#mock-svg",
     "prettier": "^1.6.1",
     "prettier-check": "^1.0.0",
     "react-dom": "16.0.0-alpha.12",

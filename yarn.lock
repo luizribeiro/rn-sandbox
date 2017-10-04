@@ -3212,12 +3212,13 @@ jest-environment-node@^20.0.3:
     jest-mock "^20.0.3"
     jest-util "^20.0.3"
 
-jest-expo@~21.0.0:
-  version "21.0.2"
-  resolved "https://registry.yarnpkg.com/jest-expo/-/jest-expo-21.0.2.tgz#87c60deda29a9c67d5c59f24e7104aff6ce0aaee"
+"jest-expo@git://github.com/luizribeiro/jest-expo.git#mock-svg":
+  version "21.0.2-SNAPSHOT.d993f41d"
+  resolved "git://github.com/luizribeiro/jest-expo.git#121d89f8668abf0092d73e7eb7fbfda188d358ad"
   dependencies:
     babel-jest "^20.0.3"
     jest "^20.0.4"
+    json5 "^0.5.1"
     react-test-renderer "16.0.0-alpha.12"
 
 jest-haste-map@20.1.0-chi.1:
@@ -4796,12 +4797,6 @@ react-native-gesture-handler@1.0.0-alpha.22:
 react-native-maps@0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.15.3.tgz#5d9e0a8e30ecc51dc755b7a3b9d6b6ed5e2dd08c"
-
-react-native-progress@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-progress/-/react-native-progress-3.4.0.tgz#c002e6efb2f0b82dd6889510e669c492da2718ac"
-  dependencies:
-    prop-types "^15.5.8"
 
 react-native-safe-module@^1.1.0:
   version "1.2.0"

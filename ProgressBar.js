@@ -3,7 +3,7 @@
  */
 
 import React from "react";
-import Svg from "react-native-svg";
+import { Svg } from "expo";
 import { View } from "react-native";
 
 type Props = {
